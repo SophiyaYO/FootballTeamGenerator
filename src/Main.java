@@ -59,7 +59,7 @@ public class Main {
                         if (teams.containsKey(tokens[1])) {
                             System.out.println(String.format("%s - %d",
                                     tokens[1],
-                                    (int) Math.ceil(teams.get(tokens[1]).getRating())));
+                                    (int) Math.round(teams.get(tokens[1]).getRating())));
 
                         } else {
                             System.out.println(String.format(
