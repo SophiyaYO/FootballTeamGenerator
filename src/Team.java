@@ -26,8 +26,21 @@ public class Team {
         return this.name;
     }
 
-    public List<Player> getPlayers() {
-        return Collections.unmodifiableList(this.players);
+//    public List<Player> getPlayers() {
+//        return Collections.unmodifiableList(this.players);
+//    }
+
+    public boolean hasPlayer(String name) {
+        boolean result = false;
+
+        for (Player player : this.players) {
+            if (player.getName().equals(name)) {
+                result = true;
+                break;
+            }
+        }
+
+        return result;
     }
 
     public void addPlayer(Player player) {
