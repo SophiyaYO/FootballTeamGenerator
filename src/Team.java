@@ -26,13 +26,17 @@ public class Team {
     }
 
     public void addPlayer(Player player) {
-
+        this.players.add(player);
     }
 
     public void removePlayer(String removePlayer) {
-        for (Player player : this.players) {
-//            if (player)
-        }
+        players.removeIf(player -> player.getName().equals(removePlayer));
+    }
+
+    public double getRating() {
+        return this.players.stream()
+                .mapToDouble(Player::overallSkillLevel)
+                .sum()/this.players.size();
     }
 
 
