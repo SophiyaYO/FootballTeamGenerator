@@ -28,16 +28,24 @@ public class Main {
                         break;
 
                     case "Add":
-                        Player player = new Player(
-                                tokens[2],
-                                Integer.parseInt(tokens[3]),
-                                Integer.parseInt(tokens[4]),
-                                Integer.parseInt(tokens[5]),
-                                Integer.parseInt(tokens[6]),
-                                Integer.parseInt(tokens[7])
-                        );
+                        if (teams.containsKey(tokens[1])) {
 
-                        teams.get(tokens[1]).addPlayer(player);
+
+                            Player player = new Player(
+                                    tokens[2],
+                                    Integer.parseInt(tokens[3]),
+                                    Integer.parseInt(tokens[4]),
+                                    Integer.parseInt(tokens[5]),
+                                    Integer.parseInt(tokens[6]),
+                                    Integer.parseInt(tokens[7])
+                            );
+
+                            teams.get(tokens[1]).addPlayer(player);
+                        } else {
+                            System.out.println(String.format(
+                                    "Team %s does not exist.",
+                                    tokens[1]));
+                        }
 
                         break;
 
