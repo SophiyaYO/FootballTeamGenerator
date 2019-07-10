@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Team {
@@ -23,6 +24,10 @@ public class Team {
 
     public String getName() {
         return this.name;
+    }
+
+    public List<Player> getPlayers() {
+        return Collections.unmodifiableList(this.players);
     }
 
     public void addPlayer(Player player) {
