@@ -21,8 +21,6 @@ public class Main {
 
             String command = tokens[0];
             try {
-
-
                 switch (command) {
                     case "Team":
                         teams.putIfAbsent(tokens[1], new Team(tokens[1]));
