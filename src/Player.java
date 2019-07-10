@@ -92,7 +92,7 @@ public class Player {
         skillLevel += this.getPassing();
         skillLevel += this.getShooting();
 
-        return skillLevel;
+        return skillLevel/5;
     }
 
     private void validateName() {
